@@ -358,10 +358,10 @@ The grading criteria for JUnit test suite are as follows:
 
 # 5 REFERENCES
 
-[1] "Eclipse.org," Internet: [http://www.eclipse.org](http://www.eclipse.org/)
-[2] "Javadoc," Internet: <http://java.sun.com/j2se/javadoc/index.jsp>
-[3] "JFreeChart," Internet: <http://www.jfree.org/jfreechart>
-[4] "JUnit," Internet: [http://www.junit.org](http://www.junit.org/)
+- [1] "Eclipse.org," Internet: [http://www.eclipse.org](http://www.eclipse.org/)
+- [2] "Javadoc," Internet: <http://java.sun.com/j2se/javadoc/index.jsp>
+- [3] "JFreeChart," Internet: <http://www.jfree.org/jfreechart>
+- [4] "JUnit," Internet: [http://www.junit.org](http://www.junit.org/)
 
 # 6 APPENDIX A – JAVADOC EXAMPLE
 

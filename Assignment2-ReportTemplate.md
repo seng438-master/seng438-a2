@@ -2,22 +2,22 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:       |   |
-|-----------------|---|
-| Student Names:  |   |
-|                 |   |
-|                 |   |
-|                 |   |
+| Group \#:      |     |
+| -------------- | --- |
+| Student Names: |     |
+|                |     |
+|                |     |
+|                |     |
 
-# Introduction
+# 1 Introduction
 
 Text…
 
-# Detailed description of unit test strategy
+# 2 Detailed description of unit test strategy
 
 // including the input partitions you have designed
 
-# Test cases developed
+# 3 Test cases developed
 
 Text…
 
@@ -25,14 +25,14 @@ Text…
 the source code method // they test. identify which tests cover which partitions
 you have explained in the test strategy section //above
 
-# How the team work/effort was divided and managed
+# 4 How the team work/effort was divided and managed
 
 Text…
 
-# Difficulties encountered, challenges overcome, and lessons learned
+# 5 Difficulties encountered, challenges overcome, and lessons learned
 
 Text…
 
-# Comments/feedback on the lab itself
+# 6 Comments/feedback on the lab itself
 
 Text…
