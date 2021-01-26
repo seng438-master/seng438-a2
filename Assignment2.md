@@ -91,7 +91,7 @@ Javadoc allows developers to create Application Programming Interface (API) docu
 
 ## 1.5 **SYSTEM UNDER TEST**
 
-The system to be tested for this lab is JFreeChart [3]. JFreeChart is an open source Java framework for chart calculation, creation and display. This framework supports many different (graphical) chart types, including pie charts, bar charts, line charts, histograms, and several other chart types. To get started with the JFreeChart system, download the “JFreeChart v1.0.zip” file from Github repository ([./Assignment2-artifact.zip](. Assignment%202%20-%20artifact.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond with actual releases of JFreeChart. The versions have been modified for the purposes of this lab.
+The system to be tested for this lab is JFreeChart [3]. JFreeChart is an open source Java framework for chart calculation, creation and display. This framework supports many different (graphical) chart types, including pie charts, bar charts, line charts, histograms, and several other chart types. To get started with the JFreeChart system, download the “JFreeChart v1.0.zip” file from Github repository ([./Assignment2-artifact.zip](Assignment02-artifact.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond with actual releases of JFreeChart. The versions have been modified for the purposes of this lab.
 
 The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to other Java applications. With this in mind, the API for JFreeChart is required to be relatively simple to understand, as it is intended to be used by many developers as an open source off-the-shelf framework. A snapshot of four different types of charts drawn using JFreeChart is shown in Figure 1.
 
@@ -111,7 +111,7 @@ This section details the instructions for executing the lab. All sections of thi
 
 All students of each group should perform this section of the lab together on a single computer. Ensure that everyone understands the concepts in this section before moving on to the rest of the lab.
 
-1. If you haven’t done so already, download and extract the _JFreeChartv1.0.zip_ file from D2L (in Assignment2 file under the Labs folder).
+1. If you haven’t done so already, extract the _JFreeChartv1.0.zip_ file from [Assignment2-artifact.zip](./Assignment2-artifact.zip).
 
 ### 2.1.1 Create an Eclipse Project
 
@@ -258,7 +258,7 @@ This section is recommended to be performed as a group, however the work may be 
 
 ### 2.2.2 Using Mocking Objects in Unit Test Code
 
-1.  Note that some methods in DataUtilities use the interfaces Values2D and KeyedValues. Although there may be other ways, in order to test these methods for this lab, you should utilize Mocking to test DataUtilities. Because the methods take in interfaces as parameters, you will not know how the inherited classes may function. Mocking allows us to return any values or throw any exceptions we want, when we want. Even so, you may find drawbacks to this approach; you should discuss these in your report.
+Note that some methods in DataUtilities use the interfaces Values2D and KeyedValues. Although there may be other ways, in order to test these methods for this lab, you should utilize Mocking to test DataUtilities. Because the methods take in interfaces as parameters, you will not know how the inherited classes may function. Mocking allows us to return any values or throw any exceptions we want, when we want. Even so, you may find drawbacks to this approach; you should discuss these in your report.
 
 To get you started, include the following example (that follows jMock notation) in your DataUtilities test code: Note that you can use any mocking framework, but the example given here are in jMock.
 
@@ -294,7 +294,7 @@ public void calculateColumnTotalForTwoValues() {
 
 2.  After you documented your test plan, you should discuss in your report how you are designing the test cases (recall the “test-case design” lectures from the class). Since you are given the requirements only, you should apply black-box test-case design techniques such equivalence classes, boundary value analysis, etc.. When applying these techniques, make sure to explicitly follow the steps discussed in the class, e.g., first derive the domain for each input variable, then the equivalence classes, etc. You should ensure that the requirements are adequately tested.
 
-3.  Carry out your test plan and create your test-cases on paper (your lab report) first. To keep your workload manageable, we would like you to create test cases for all 5 methods of org.jfree.data.DataUtilities and choose 5 out of 15 methods for org.jfree.data.Range.
+3.  Carry out your test plan and create your test-cases on paper (your lab report) first. **To keep your workload manageable, we would like you to create test cases for all 5 methods of org.jfree.data.DataUtilities and choose 5 out of 15 methods for org.jfree.data.Range.**
 
 ### 2.2.4 Write your Test Code based on your Test-case Design
 
@@ -318,7 +318,7 @@ The unit testing knowledge you gained in this lab can be scaled up to much large
 
 The objectives for the demo are a) Preparing you for technical presentations, b) an early assessment of your work to give you a second chance to submit a high quality report, and c) making sure everybody in the team contributes evenly.
 
-It is mandatory for all team members to attend the demo session and explain the TAs in the lab what they have done for this assignment. For this particular assignment, Lab4 is the demo day. You are expected to almost finish the assignment by the lab hour. All the team members should attend the lab. The TAs will go through the groups and each group member must demonstrate examples of developed tests for each method that they designed (and bugs they found) – at least two tests per student, which one uses mocking. They should also explain their strategy for designing the tests.
+It is mandatory for all team members to attend the demo session and explain the TAs in the lab what they have done for this assignment. All the team members should attend the demo. The TAs will go through the groups and each group member must demonstrate examples of developed tests for each method that they designed (and bugs they found) – at least two tests per student, which one uses mocking. They should also explain their strategy for designing the tests.
 
 **NOTE1: Student who miss the demo session or are unable to demo what is detailed above are considered as less- contributors and may lose up to the entire assignment 2’s mark.**
 
@@ -332,7 +332,7 @@ It is mandatory for all team members to attend the demo session and explain the 
 
 ## 4.2 LAB REPORT (20%)
 
-To be consistent, please use the template Word file “Lab 2 Report Template.doc” provided online inside the \_lab_artifacts.zip_file.
+To be consistent, please use the template Word file [“Assignment2-ReportTemplate.md”](Assignment2-ReportTemplate.md) provided in the reopsitory.
 
 | Marking scheme                                                                                                                                                                                                                                                                                                                                                                                                                                                        |  %  |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-: |
@@ -348,12 +348,12 @@ Your zipped Eclipse project including any external library for mocking and all t
 
 The grading criteria for JUnit test suite are as follows:
 
-| **Marking scheme**                                                                                                                                                                                                                                                                                 |     |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| Clarity //are they easy to follow, through commenting or style, etc.? //The test cases should also have comments that shows which test follows which part of the test strategy. E.g., // this test covers a maximum value for variable X and normal values for variable Y and Z in method A(X,Y,Z) | 10% |
-| Adherence to requirements //do they cover all the classes and partitions described in the test strategy?)                                                                                                                                                                                          | 10% |
-| Completeness // are there any obvious requirements which have not been tested? // Have equivalence classes, and boundary value analysis been followed carefully? // Is your unit test suite clearly match the test-case design section in your lab report?                                         | 20% |
-| Correctness // do test run without error? // do the tests actually test what they are intended to test?                                                                                                                                                                                            | 20% |
+| **Marking scheme**                                                                                                                                                                                                                                                                               |     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
+| **Clarity:** are they easy to follow, through commenting or style, etc.? The test cases should also have comments that shows which test follows which part of the test strategy. E.g., this test covers a maximum value for variable X and normal values for variable Y and Z in method A(X,Y,Z) | 10% |
+| **Adherence to requirements:** do they cover all the classes and partitions described in the test strategy?)                                                                                                                                                                                     | 10% |
+| **Completeness:** are there any obvious requirements which have not been tested? Have equivalence classes, and boundary value analysis been followed carefully? Is your unit test suite clearly match the test-case design section in your lab report?                                           | 20% |
+| **Correctness:** do test run without error? do the tests actually test what they are intended to test?                                                                                                                                                                                           | 20% |
 
 > **Important note**: Please store the JUnit test suite you have developed in this lab in a known location. It will be re-used in the next Labs.
 
