@@ -260,7 +260,7 @@ This section is recommended to be performed as a group, however the work may be 
 
 1.  Note that some methods in DataUtilities use the interfaces Values2D and KeyedValues. Although there may be other ways, in order to test these methods for this lab, you should utilize Mocking to test DataUtilities. Because the methods take in interfaces as parameters, you will not know how the inherited classes may function. Mocking allows us to return any values or throw any exceptions we want, when we want. Even so, you may find drawbacks to this approach; you should discuss these in your report.
 
-        To get you started, include the following example (that follows jMock notation) in your DataUtilities test code: Note that you can use any mocking framework, but the example given here are in jMock.
+To get you started, include the following example (that follows jMock notation) in your DataUtilities test code: Note that you can use any mocking framework, but the example given here are in jMock.
 
 ```java
  @Test
