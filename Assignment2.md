@@ -56,7 +56,7 @@ All the tasks of this lab should be completed in groups of four/five (as you for
 
 ## 1.3 **OVERVIEW**
 
-This lab can be divided into three main sections. Similar to lab 1, thefirst section is familiarization. During the familiarization stage, studentswill be shown how to set up a JUnit test project in Eclipse using JUnit,create a unit test, and how to navigate Javadocs.
+This lab can be divided into three main sections. Similar to lab 1, the first section is familiarization. During the familiarization stage, students will be shown how to set up a JUnit test project in Eclipse using JUnit,create a unit test, and how to navigate Javadocs.
 
 After familiarization, the second section of the lab is unit test generation based on the requirements specified in Javadocs. In this stage, students will develop unit test suites for two classes. These test suites will be comprised of unit tests which have been generated according to the requirements.
 
@@ -103,7 +103,7 @@ This section details the instructions for executing the lab. All sections of thi
 
 ## 2.1 **FAMILIARIZATION**
 
-All students of each group should perform this section of the lab together on a single computer. Ensure that everyone understands the concepts in this section before moving on to the rest of the lab.
+Ensure that everyone understands the concepts in this section before moving on to the rest of the lab.
 
 1. If you haven’t done so already, extract the _JFreeChartv1.0.zip_ file from [Assignment2-artifact.zip](./Assignment2-artifact.zip).
 
