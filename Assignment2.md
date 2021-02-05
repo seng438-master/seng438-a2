@@ -337,7 +337,7 @@ To be consistent, please use the template Word file [“Assignment2-ReportTempla
 
 ## 4.3 JUNIT TEST SUITE (60%)
 
-Your zipped Eclipse project including any external library for mocking and all test suite Java files, as a SINGLE file, should be submitted along with the lab report in D2L. The JUnit test should be executable AS IS. No restricting, importing, etc. should be needed.
+Your Eclipse project including any external library for mocking and all test suite Java files should be submitted along with the lab report in GitHub. The JUnit test should be executable AS IS. No restricting, importing, etc. should be needed.
 
 The grading criteria for JUnit test suite are as follows:
 
