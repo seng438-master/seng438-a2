@@ -4,7 +4,7 @@
 
 > **Automated Requirements-Based API Unit Testing using JUnit**
 
-> Instructor: Dr. Behrouz Far (far@ucalgary.ca)
+> Instructor: Dr. Behrouz Far (far@ucalgary.ca) , Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
 
 > Department of Electrical and Computer Engineering
 
@@ -85,7 +85,7 @@ Javadoc allows developers to create Application Programming Interface (API) docu
 
 ## 1.5 **SYSTEM UNDER TEST**
 
-The system to be tested for this lab is JFreeChart [3]. JFreeChart is an open source Java framework for chart calculation, creation and display. This framework supports many different (graphical) chart types, including pie charts, bar charts, line charts, histograms, and several other chart types. To get started with the JFreeChart system, download the “JFreeChart v1.0.zip” file from Github repository ([./Assignment2-artifact.zip](Assignment02-artifact.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond with actual releases of JFreeChart. The versions have been modified for the purposes of this lab.
+The system to be tested for this lab is JFreeChart [3]. JFreeChart is an open source Java framework for chart calculation, creation and display. This framework supports many different (graphical) chart types, including pie charts, bar charts, line charts, histograms, and several other chart types. To get started with the JFreeChart system, download the “jfreechart-1.0.19.zip” file from Github repository ([./Assignment2-artifact.zip](Assignment02-artifact.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond with actual releases of JFreeChart. The versions have been modified for the purposes of this lab.
 
 The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to other Java applications. With this in mind, the API for JFreeChart is required to be relatively simple to understand, as it is intended to be used by many developers as an open source off-the-shelf framework. A snapshot of four different types of charts drawn using JFreeChart is shown in Figure 1.
 
@@ -115,7 +115,7 @@ Ensure that everyone understands the concepts in this section before moving on t
 
 1.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
 
-1.  Under the folder Java, ensure that _Java Project_ is selected and click _Next_.
+1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on <Mark>**version8**</Mark> and then click _Next_ (media/creatingProject.png).
 
 1.  The dialog should now be prompting for the project name. Enter _JFreeChart_ in the _Project Name_ field, and then click _Next_.
 
@@ -123,21 +123,21 @@ Ensure that everyone understands the concepts in this section before moving on t
 
 1.  The _Java Settings_ dialog should now be displayed. This dialog has five tabs along the top: _Source_, _Projects_, _Libraries_, _Order and Export_ and _Module Dependencies_. Move to the _Libraries_ tab, and click the _Add External JARs (or Libraries)…_ button.
 
-2.  Select the _jfreechart.jar_ file from the known location that you already extracted in and click _Open_. Click _Add External Libraries_… again, this time add all the .jar files from the _lib_ and _lib/jMock_ directory where you have unzipped the _JFreeChart v1.0.zip_ file. The Java Settings dialog should now look like Figure 2, below.
+2.  Select the _jfreechart-1.0.19.jar_ file from the known location that you already extracted in and click _Open_. Click _Add External Libraries_… again, this time add all the .jar files from the _lib_ and _lib/jMock_ directory where you have unzipped the _jfreechart-1.0.19.zip_ file. The Java Settings dialog should now look like Figure 2, below.
 
-> ![A screenshot of a social media post Description automatically generated](media/bee07028e5cdebba6f6b37a4610d5a65.tmp)
+> ![A screenshot of a social media post Description automatically generated](media/externalLibraries.png)
 
 **Figure 2 - The Java Settings dialog after adding required archives**
 
 3.  Click _Finish_. The project (SUT) is now set up and ready for testing. To run the demo classes, in the package explorer expand the _Referenced Libraries_ item in the newly created JFreeChart project, exposing the .jar files just added. Right click on the _jfreechart.jar_, and select _Run As \-\> Java Application_ (Figure 3).
 
-![](media/a3bb26912bf293f175adab2db9161c6f.png)
+
 
 **Figure 3 - Running JFreeChart**
 
 4.  In the _Select Java Application_ dialog, select any of the four demo applications (e.g., _TimeSeriesChartDemo1_), and click _OK_ as shown in Figure 4.
 
-> ![](media/b432ec4061a138641ecec0dc1a24cdc9.tmp)
+> ![](media/showingCharts.png)
 
 **Figure 4 - The Select Java Application dialog**
 
@@ -175,7 +175,8 @@ To create a test suite containing a single unit test in JUnit, follow these step
 6.  Click _Finish_.
 
 7.  As a practice, write a simple test case for the getCentralValue() method.
-    See Figure 7.
+    See ![](media/JunitTest.tmp)
+.
 
 ```java
 package org.jfree.data.test;
@@ -217,14 +218,13 @@ public class RangeTest {
     org.jfree.data.test) and select _Run As -\> JUnit Test_.
 
 9.  This will change the perspective to the JUnit perspective, and run all the
-    tests within the RangeTest class. The test just written should pass,
-    indicated by the JUnit view similar to Figure 8 below.
+    tests within the RangeTest class. The test just written should pass
 
-![](media/9c5c760b6bbf2846507c4129d1fb2c9a.tmp)
 
 **Figure 8 - JUnit view showing passed test**
 
 ### 2.1.4 Navigate Javadoc API Specifications
+![](media/doc.png)
 
 The test generation section of this lab (Section 2.2) will require you to generate unit tests for a number of classes based on specifications (requirements) contained in the Javadocs for those classes. If you’re already familiar with Javadoc, feel free to skip this section and continue from Section 2.2.
 
@@ -298,7 +298,7 @@ public void calculateColumnTotalForTwoValues() {
 
 3.  If you have divided the tests and completed them individually, then upon completion of the tests, review each other’s tests, looking for any inconsistencies or defects in the tests themselves.
 
-4.  Execute the test suite you have created on JFreeChart v1.0.zip. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
+4.  Execute the test suite you have created on jfreechart-1.0.19.zip. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
 
 # 3. SUMMARY
 
@@ -359,4 +359,4 @@ The grading criteria for JUnit test suite are as follows:
 
 # 6 APPENDIX A – JAVADOC EXAMPLE
 
-![](media/2302e46e9afb79b2d9477fc02f7f172d.png)
+![](media/doc.png)
