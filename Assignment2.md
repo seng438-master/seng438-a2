@@ -115,7 +115,7 @@ Ensure that everyone understands the concepts in this section before moving on t
 
 1.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
 
-1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on <Mark>**version8**</Mark> and then click _Next_ (media/creatingProject.png).
+1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on **vesrsion8** and then click _Next_ (media/creatingProject.png).
 
 1.  The dialog should now be prompting for the project name. Enter _JFreeChart_ in the _Project Name_ field, and then click _Next_.
 
