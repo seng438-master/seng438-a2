@@ -89,7 +89,9 @@ Ensure that everyone understands the concepts in this section before moving on t
 **Figure 2 - The Java Settings dialog after adding required archives**
 
 1.  Click _Finish_. The project (SUT) is now set up and ready for testing. To run the demo classes, in the package explorer expand the _Referenced Libraries_ item in the newly created JFreeChart project, exposing the .jar files just added. Right click on the _jfreechart.jar_, and select _Run As \-\> Java Application_ (Figure 3).
+   <img src="media/RunAsApplication.png" alt="Run as Application" width="360"/>
 
+**Figure 3 - Run as a Java Application**
 
 2.  In the _Select Java Application_ dialog, select any of the four demo applications (e.g., _TimeSeriesChartDemo1_), and click _OK_ as shown in Figure 4.
 
