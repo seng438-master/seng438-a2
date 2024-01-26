@@ -258,7 +258,7 @@ public class DataUtilitiesTest extends DataUtilities {
 
 3.  If you have divided the tests and completed them individually, then upon completion of the tests, review each other’s tests, looking for any inconsistencies or defects in the tests themselves.
 
-4.  Execute the test suite you have created on jfreechart-1.0.19.zip. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
+4.  Execute the test suite you have created on _JFreeChart v1.0.zip_. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
 
 # 3. Summary
 
