@@ -68,11 +68,11 @@ Ensure that everyone understands the concepts in this section before moving on t
 
 1.  Open Eclipse.
 
-    Note: All the figures shown are from Eclipse Java 2019-12 downloaded and installed from [1] (in installation process, we need Eclipse IDE for Java Developers for this course). If Eclipse is already installed in your system, you may need to update it.
+    Note: All the figures shown are from Eclipse Java 2023-12 downloaded and installed from [1] (in installation process, we need Eclipse IDE for Java Developers for this course). If Eclipse is already installed in your system, you may need to update it.
 
 1.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
 
-1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on **vesrsion8** and then click _Next_ 
+1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on **vesrsion8** (or JavaSE-1.8) and then click _Next_ 
    
    <img src="media/creatingProject.png" alt="creatingProject.png" width="360"/>
 
@@ -123,12 +123,9 @@ To create a test suite containing a single unit test in JUnit, follow these step
     separate package makes it easier to keep the two apart.
 
 
-6.  Click _Finish_.
+6.  Click _Finish_. See <img src="media/JunitTest.png" alt="JunitTest.png" width="360"/>. 
 
-7.  As a practice, write a simple test case for the getCentralValue() method.
-    See <img src="media/JunitTest.png" alt="JunitTest.png" width="360"/>
-
-.
+7.  As a practice, write a simple test case for the getCentralValue() method. You can substitute the automatically generated default code with the code provided below.
 
 ```java
 package org.jfree.data.test;
@@ -177,7 +174,7 @@ public class RangeTest {
 
 The test generation section of this lab (Section 2.2) will require you to generate unit tests for a number of classes based on specifications (requirements) contained in the Javadocs for those classes. If you’re already familiar with Javadoc, feel free to skip this section and continue from Section 2.2.
 
-1.  Unzip the _JFreeChart–ModifiedJavadoc.zip_ file and open the file _index.html_. This is the Javadoc for (a slightly modified version of) JFreeChart. Note the location of different elements in the Javadoc as shown in Appendix A.
+1.  Unzip the _JFreeChart-ModifiedJavadoc.zip_ file and open the file _index.html_. This is the Javadoc for (a slightly modified version of) JFreeChart. Note the location of different elements in the Javadoc as shown in Appendix A.
 
     **Note** that Javadocs can be browsed with all classes shown, or with classes filtered by package. Each of these two approaches has its usefulness. Viewing all classes is useful if you know what the class you are looking for is called, as they are ordered alphabetically. Viewing classes in a single package only is useful for when you’re not sure exactly what class you’re looking for, but know what area of the code it might be found in.
 
@@ -206,25 +203,39 @@ Note that some methods in DataUtilities use the interfaces Values2D and KeyedVal
 To get you started, include the following example (that follows jMock notation) in your DataUtilities test code: Note that you can use any mocking framework, but the example given here are in jMock.
 
 ```java
- @Test
-public void calculateColumnTotalForTwoValues() {
-    // setup
-    Mockery mockingContext = new Mockery();
-    final Values2D values = mockingContext.mock(Values2D.class);
-    mockingContext.checking(new Expectations() {
-        {
-            one(values).getRowCount();
-            will(returnValue(2));
-            one(values).getValue(0, 0);
-            will(returnValue(7.5));
-            one(values).getValue(1, 0);
-            will(returnValue(2.5));
-        }
-    });
-    // exercise	double result = DataUtilities.calculateColumnTotal(values, 0);
-    // verify
-    assertEquals(result, 10.0, .000000001d);
-    // tear-down: NONE in this test method
+package org.jfree.data.test;
+
+import static org.junit.Assert.*;
+
+import org.jfree.data.DataUtilities;
+import org.jfree.data.Values2D;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.junit.Test;
+
+public class DataUtilitiesTest extends DataUtilities {
+
+	 @Test
+	 public void calculateColumnTotalForTwoValues() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(2));
+	             one(values).getValue(0, 0);
+	             will(returnValue(7.5));
+	             one(values).getValue(1, 0);
+	             will(returnValue(2.5));
+	         }
+	     });
+	     double result = DataUtilities.calculateColumnTotal(values, 0);
+	     // verify
+	     assertEquals(result, 10.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+
 }
 
 ```
