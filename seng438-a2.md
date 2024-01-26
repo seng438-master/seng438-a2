@@ -1,6 +1,6 @@
 **SENG 438 - Software Testing, Reliability, and Quality**
->   **Assignment \#1**
->   **Introduction to Testing and Defect (Bug) Tracking**
+>   **Assignment \#2**
+>   **Introduction to Unit Testing**
 >   Instructors: 
 >   -   Dr. Behrouz Far (far@ucalgary.ca)
 >   -   Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
@@ -37,7 +37,7 @@ More information on JUnit can be found at http://www.junit.org and more informat
 
 ## 1.5 System Under Test
 
-The system to be tested in this lab is JFreeChart [3]. JFreeChart is an open-source Java framework for chart calculation, creation, and display. This framework supports various chart types, such as pie charts, bar charts, line charts, histograms, and others. To begin working with JFreeChart, download the "jfreechart-1.0.19.zip" file from the Github repository ([./seng438-a2-artifacts.zip](seng438-a22-artifacts.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond to actual releases of JFreeChart. They have been modified for the purposes of this lab.
+The system to be tested in this lab is JFreeChart [3]. JFreeChart is an open-source Java framework for chart calculation, creation, and display. This framework supports various chart types, such as pie charts, bar charts, line charts, histograms, and others. To begin working with JFreeChart, download the _"JFreeChart v1.0.zip"_ file from the Github repository ([./seng438-a2-artifacts.zip](seng438-a22-artifacts.zip)) and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage (Section 2.1). Note that the versions of JFreeChart distributed for this lab do not correspond to actual releases of JFreeChart. They have been modified for the purposes of this lab.
 
 The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to Java applications. With this in mind, the API for JFreeChart is designed to be relatively easy to understand, as it is intended to be used by many developers as an open-source off-the-shelf framework. A snapshot of four different types of charts drawn using JFreeChart is shown in Figure 1.
 
@@ -62,17 +62,17 @@ This section provides the steps for completing the lab. It is important to note 
 
 Ensure that everyone understands the concepts in this section before moving on to the rest of the lab.
 
-1. If you haven’t done so already, extract the _JFreeChartv1.0.zip_ file from [seng438-a2-artifacts.zip](./seng438-a2-artifacts.zip).
+1. If you haven’t done so already, extract the _"JFreeChart v1.0.zip"_ file from [seng438-a2-artifacts.zip](./seng438-a2-artifacts.zip).
 
 ### 2.1.1 Create an Eclipse Project
 
 1.  Open Eclipse.
 
-    Note: All the figures shown are from Eclipse Java 2019-12 downloaded and installed from [1] (in installation process, we need Eclipse IDE for Java Developers for this course). If Eclipse is already installed in your system, you may need to update it.
+    Note: All the figures shown are from Eclipse Java 2023-12 downloaded and installed from [1] (in installation process, we need Eclipse IDE for Java Developers for this course). If Eclipse is already installed in your system, you may need to update it.
 
 1.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
 
-1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on **vesrsion8** and then click _Next_ 
+1.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on **vesrsion8** (or JavaSE-1.8) and then click _Next_ 
    
    <img src="media/creatingProject.png" alt="creatingProject.png" width="360"/>
 
@@ -82,14 +82,16 @@ Ensure that everyone understands the concepts in this section before moving on t
 
 1.  The _Java Settings_ dialog should now be displayed. This dialog has five tabs along the top: _Source_, _Projects_, _Libraries_, _Order and Export_ and _Module Dependencies_. Move to the _Libraries_ tab, and click the _Add External JARs (or Libraries)…_ button.
 
-2.  Select the _jfreechart-1.0.19.jar_ file from the known location that you already extracted in and click _Open_. Click _Add External Libraries_… again, this time add all the .jar files from the _lib_ and _lib/jMock_ directory where you have unzipped the _jfreechart-1.0.19.zip_ file. The Java Settings dialog should now look like Figure 2, below.
+2.  Select the _jfreechart.jar_ file from the known location that you already extracted in and click _Open_. Click _Add External Libraries_… again, this time add all the .jar files from the _lib_ and _lib/jMock_ directory where you have unzipped the _JFreeChart v1.0.zip_ file. The Java Settings dialog should now look like Figure 2, below.
 
 <img src="media/externalLibraries.png" alt="externalLibraries.png" width="360"/>
 
 **Figure 2 - The Java Settings dialog after adding required archives**
 
 1.  Click _Finish_. The project (SUT) is now set up and ready for testing. To run the demo classes, in the package explorer expand the _Referenced Libraries_ item in the newly created JFreeChart project, exposing the .jar files just added. Right click on the _jfreechart.jar_, and select _Run As \-\> Java Application_ (Figure 3).
+   <img src="media/RunAsApplication.png" alt="Run as Application" width="360"/>
 
+**Figure 3 - Run as a Java Application**
 
 2.  In the _Select Java Application_ dialog, select any of the four demo applications (e.g., _TimeSeriesChartDemo1_), and click _OK_ as shown in Figure 4.
 
@@ -121,12 +123,9 @@ To create a test suite containing a single unit test in JUnit, follow these step
     separate package makes it easier to keep the two apart.
 
 
-6.  Click _Finish_.
+6.  Click _Finish_. See <img src="media/JunitTest.png" alt="JunitTest.png" width="360"/>. 
 
-7.  As a practice, write a simple test case for the getCentralValue() method.
-    See <img src="media/JunitTest.png" alt="JunitTest.png" width="360"/>
-
-.
+7.  As a practice, write a simple test case for the getCentralValue() method. You can substitute the automatically generated default code with the code provided below.
 
 ```java
 package org.jfree.data.test;
@@ -175,7 +174,7 @@ public class RangeTest {
 
 The test generation section of this lab (Section 2.2) will require you to generate unit tests for a number of classes based on specifications (requirements) contained in the Javadocs for those classes. If you’re already familiar with Javadoc, feel free to skip this section and continue from Section 2.2.
 
-1.  Unzip the _JFreeChart–ModifiedJavadoc.zip_ file and open the file _index.html_. This is the Javadoc for (a slightly modified version of) JFreeChart. Note the location of different elements in the Javadoc as shown in Appendix A.
+1.  Unzip the _JFreeChart-ModifiedJavadoc.zip_ file and open the file _index.html_. This is the Javadoc for (a slightly modified version of) JFreeChart. Note the location of different elements in the Javadoc as shown in Appendix A.
 
     **Note** that Javadocs can be browsed with all classes shown, or with classes filtered by package. Each of these two approaches has its usefulness. Viewing all classes is useful if you know what the class you are looking for is called, as they are ordered alphabetically. Viewing classes in a single package only is useful for when you’re not sure exactly what class you’re looking for, but know what area of the code it might be found in.
 
@@ -204,25 +203,39 @@ Note that some methods in DataUtilities use the interfaces Values2D and KeyedVal
 To get you started, include the following example (that follows jMock notation) in your DataUtilities test code: Note that you can use any mocking framework, but the example given here are in jMock.
 
 ```java
- @Test
-public void calculateColumnTotalForTwoValues() {
-    // setup
-    Mockery mockingContext = new Mockery();
-    final Values2D values = mockingContext.mock(Values2D.class);
-    mockingContext.checking(new Expectations() {
-        {
-            one(values).getRowCount();
-            will(returnValue(2));
-            one(values).getValue(0, 0);
-            will(returnValue(7.5));
-            one(values).getValue(1, 0);
-            will(returnValue(2.5));
-        }
-    });
-    // exercise	double result = DataUtilities.calculateColumnTotal(values, 0);
-    // verify
-    assertEquals(result, 10.0, .000000001d);
-    // tear-down: NONE in this test method
+package org.jfree.data.test;
+
+import static org.junit.Assert.*;
+
+import org.jfree.data.DataUtilities;
+import org.jfree.data.Values2D;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.junit.Test;
+
+public class DataUtilitiesTest extends DataUtilities {
+
+	 @Test
+	 public void calculateColumnTotalForTwoValues() {
+	     // setup
+	     Mockery mockingContext = new Mockery();
+	     final Values2D values = mockingContext.mock(Values2D.class);
+	     mockingContext.checking(new Expectations() {
+	         {
+	             one(values).getRowCount();
+	             will(returnValue(2));
+	             one(values).getValue(0, 0);
+	             will(returnValue(7.5));
+	             one(values).getValue(1, 0);
+	             will(returnValue(2.5));
+	         }
+	     });
+	     double result = DataUtilities.calculateColumnTotal(values, 0);
+	     // verify
+	     assertEquals(result, 10.0, .000000001d);
+	     // tear-down: NONE in this test method
+	 }
+
 }
 
 ```
@@ -245,7 +258,7 @@ public void calculateColumnTotalForTwoValues() {
 
 3.  If you have divided the tests and completed them individually, then upon completion of the tests, review each other’s tests, looking for any inconsistencies or defects in the tests themselves.
 
-4.  Execute the test suite you have created on jfreechart-1.0.19.zip. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
+4.  Execute the test suite you have created on _JFreeChart v1.0.zip_. Note that the classes have random defects in them intentionally, and thus several of your tests should fail. Therefore, to write your test methods, you need to follow the specifications, not the actual results.
 
 # 3. Summary
 
